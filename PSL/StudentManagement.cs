@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using PSL.CustomFunctions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace PSL
         {
             InitializeComponent();
             BuildMenu();
-            
+
         }
 
         private void BuildMenu()
@@ -26,7 +27,7 @@ namespace PSL
             // 1. Load Menu list
             using (DataTable dt = DataConnection.ReturnDataTable("spLoadMenu", "@LoginID", UserInfo.LoginID))
             {
-                DataRow[] parents =  dt.Select("ParentMenuID is null");
+                DataRow[] parents = dt.Select("ParentMenuID is null");
                 DataRow[] children = dt.Select("ParentMenuID = 'MNStudentManagement'");
                 BuildMenuItems(dt, null, null);
             }
@@ -40,11 +41,12 @@ namespace PSL
             if (string.IsNullOrEmpty(parentMenuID))
             {
                 currentDataRow = dt.Select("ParentMenuID is null");
-            } else
+            }
+            else
             {
                 currentDataRow = dt.Select(string.Format("ParentMenuID = '{0}'", parentMenuID));
             }
-            
+
             foreach (DataRow row in currentDataRow)
             {
                 ToolStripMenuItem_StudentManagement tsmi = new ToolStripMenuItem_StudentManagement(row);
@@ -52,7 +54,8 @@ namespace PSL
                 if (string.IsNullOrEmpty(parentMenuID))
                 {
                     msMain.Items.Add(tsmi);
-                } else
+                }
+                else
                 {
                     parentMenu.DropDownItems.Add(tsmi);
                 }
@@ -69,14 +72,15 @@ namespace PSL
                     if (currentMenuItem.drDefine["AssemblyName"] is string _assemblyName && _assemblyName.Length > 0)
                     {
                         string menuId = currentMenuItem.drDefine["MenuID"].ToString();
-                        string classFullName = string.Format("{0}.{1}",_assemblyName, _className);
+                        string classFullName = string.Format("{0}.{1}", _assemblyName, _className);
                         // Check if form is created
                         if (this.MdiChildren.Where(c => c is BaseForm).Cast<BaseForm>()
-                            .FirstOrDefault(c => string.Compare(c.MenuID, menuId, true) == 0) 
+                            .FirstOrDefault(c => string.Compare(c.MenuID, menuId, true) == 0)
                             is Form existedForm)
                         {
                             existedForm.Activate();
-                        } else
+                        }
+                        else
                         {
                             var item = Activator.CreateInstance(_assemblyName, classFullName);
                             object _obj = item.Unwrap();
@@ -90,18 +94,21 @@ namespace PSL
                         }
 
                     }
-                } else
+                }
+                else
                 {
-
-                    string @class = currentMenuItem.drDefine["MenuId"].ToString();
-                    var classType = Type.GetType(String.Format("{0}.{1}", "DAL", @class));
-                    if (classType != null)
+                    switch (currentMenuItem.drDefine["MenuId"].ToString())
                     {
-                        MessageBox.Show(classType.ToString());
+                        case "Logout":
+                            Logout logout = new Logout();
+                            logout.Execute();
+                            break;
                     }
                 }
-            } 
+            }
         }
+
+
 
         private void CreateAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
