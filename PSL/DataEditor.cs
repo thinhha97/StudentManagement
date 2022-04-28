@@ -19,6 +19,7 @@ namespace PSL
         DataTable dtSource = null;
         readonly BindingSource bindingSource = new BindingSource();
         private bool _unsavedChanges = false;
+        private bool _encrypted = false;
         public DataEditor()
         {
             InitializeComponent();
@@ -95,12 +96,6 @@ namespace PSL
             }
         }
 
-        private void DgvDataEditor_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            _unsavedChanges = true;
-
-            ToggleBtnSaveData();
-        }
 
         private void ToggleBtnSaveData()
         {
@@ -168,6 +163,20 @@ namespace PSL
                 MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void DgvDataEditor_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            string text = dgvDataEditor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            if (dgvDataEditor.Columns[e.ColumnIndex].Name == "Password")
+            {
+                if (!_encrypted)
+                {
+                    _encrypted = true;
+                    dgvDataEditor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Encryption.Encrypt(text);
+                }
+                _encrypted = false;
+            }
         }
     }
 }

@@ -45,14 +45,14 @@
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
             this.msMain.Padding = new System.Windows.Forms.Padding(10, 2, 0, 2);
-            this.msMain.Size = new System.Drawing.Size(1924, 30);
+            this.msMain.Size = new System.Drawing.Size(1924, 24);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(14, 26);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(14, 20);
             // 
             // statusStrip1
             // 
@@ -84,7 +84,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msMain;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StudentManagement";
             this.Text = "StudentManagement";
             this.msMain.ResumeLayout(false);
