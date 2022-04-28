@@ -55,6 +55,10 @@ namespace PSL
                 return false;
             }
         }
+        /// <summary>
+        /// Grant Access to Installation Folder.
+        /// </summary>
+        /// <param name="fullPath">Path to Installation Folder.</param>
         private static void GrantAccess(string fullPath)
         {
             DirectoryInfo dInfo = new DirectoryInfo(fullPath);
