@@ -48,10 +48,15 @@ namespace PSL
 
         private void LoadDataFromDatabase()
         {
-            dtSource = DataConnection.ReturnDataTable(this.FormSetting.ProcedureName, "@LoginID", UserInfo.LoginID);
+
+            dtSource = DataConnection.ReturnDataTable(String.IsNullOrEmpty(this.FormSetting.ProcedureName) 
+                ?this.FormSetting.SelectCommandText 
+                :this.FormSetting.ProcedureName, "@LoginID", UserInfo.LoginID);
             bindingSource.DataSource = dtSource;
             dgvDataEditor.DataSource = bindingSource;
+
             _unsavedChanges = false;
+            ToggleBtnSaveData();
             
         }
         private void BtnReload_Click(object sender, EventArgs e)
@@ -87,7 +92,6 @@ namespace PSL
                 {
                     da.Update((DataTable)bindingSource.DataSource);
                     LoadDataFromDatabase();
-                    _unsavedChanges = false;
                 }
                 catch (Exception ex)
                 {
@@ -160,7 +164,7 @@ namespace PSL
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -177,6 +181,8 @@ namespace PSL
                 }
                 _encrypted = false;
             }
+            _unsavedChanges = true;
+            ToggleBtnSaveData();
         }
     }
 }
