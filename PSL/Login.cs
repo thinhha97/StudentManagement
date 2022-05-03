@@ -47,9 +47,9 @@ namespace PSL
                 _passwordEncrypted = file[2];
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -61,6 +61,15 @@ namespace PSL
             lines[2] = Encryption.CustomEncrypt(txtPassword.Text);
             File.WriteAllLines(savedCredentialPath, lines);
         }
+
+        private void DeleteCredentialInfo()
+        {
+            if (File.Exists(savedCredentialPath))
+            {
+                File.Delete(savedCredentialPath);
+            }
+        }
+
         private void Login_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -78,7 +87,7 @@ namespace PSL
                         }
                         else
                         {
-
+                            DeleteCredentialInfo();
                         }
                         this.DialogResult = DialogResult.OK;
                         this.Close();

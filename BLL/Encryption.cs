@@ -48,8 +48,6 @@ namespace BLL
             return new string(array);
         }
 
-
-
         /// <summary>
         /// Decrypt a decryptable-encrypted string.
         /// </summary>

@@ -11,8 +11,7 @@ namespace PSL.CustomFunctions
     {
         public void Execute()
         {
-            
-            if (MessageBox.Show("Do you want to log out?", "Log out?", MessageBoxButtons.YesNo) 
+            if (MessageBox.Show("Do you want to log out?", "Log out?", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
             {
                 Application.Restart();
