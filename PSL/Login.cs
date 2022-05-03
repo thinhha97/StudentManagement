@@ -34,7 +34,6 @@ namespace PSL
                 txtUsername.Text = Encryption.Decrypt(_usernameEncrypted);
                 txtPassword.Text = Encryption.Decrypt(_passwordEncrypted);
             }
-
         }
 
         private void ReadCredentialInfo()
@@ -45,7 +44,6 @@ namespace PSL
                 _rememberMe = bool.Parse(Encryption.Decrypt(file[0]));
                 _usernameEncrypted = file[1];
                 _passwordEncrypted = file[2];
-
             }
             catch (Exception ex)
             {
