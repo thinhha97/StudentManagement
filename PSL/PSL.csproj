@@ -125,12 +125,6 @@
     <Compile Include="ImportExcel.Designer.cs">
       <DependentUpon>ImportExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReviewChanges.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReviewChanges.Designer.cs">
-      <DependentUpon>ReviewChanges.cs</DependentUpon>
-    </Compile>
     <Compile Include="SetConnectionInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +155,6 @@
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="ReviewChanges.resx">
-      <DependentUpon>ReviewChanges.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SetConnectionInfo.resx">
       <DependentUpon>SetConnectionInfo.cs</DependentUpon>
     </EmbeddedResource>
