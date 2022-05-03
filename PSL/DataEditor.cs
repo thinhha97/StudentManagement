@@ -13,8 +13,6 @@ namespace PSL
 {
     public partial class DataEditor : BaseForm
     {
-        
-        
         private FormSetting FormSetting;
         DataTable dtSource = null;
         readonly BindingSource bindingSource = new BindingSource();
@@ -48,7 +46,6 @@ namespace PSL
 
         private void LoadDataFromDatabase()
         {
-
             dtSource = DataConnection.ReturnDataTable(String.IsNullOrEmpty(this.FormSetting.ProcedureName) 
                 ?this.FormSetting.SelectCommandText 
                 :this.FormSetting.ProcedureName, "@LoginID", UserInfo.LoginID);
@@ -57,7 +54,6 @@ namespace PSL
 
             _unsavedChanges = false;
             ToggleBtnSaveData();
-            
         }
         private void BtnReload_Click(object sender, EventArgs e)
         {
@@ -100,7 +96,6 @@ namespace PSL
             }
         }
 
-
         private void ToggleBtnSaveData()
         {
             if (_unsavedChanges)
@@ -141,8 +136,7 @@ namespace PSL
                     }
                     ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                     using (ExcelPackage package = new ExcelPackage(fileInfo))
-                    {
-                        
+                    {                     
                         ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                         int colCount = worksheet.Dimension.End.Column;
                         int rowCount = worksheet.Dimension.End.Row;
@@ -166,7 +160,6 @@ namespace PSL
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void DgvDataEditor_CellValueChanged(object sender, DataGridViewCellEventArgs e)
