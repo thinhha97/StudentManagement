@@ -19,7 +19,6 @@ namespace PSL
         {
             InitializeComponent();
             BuildMenu();
-
         }
 
         private void BuildMenu()
@@ -90,9 +89,7 @@ namespace PSL
                                 form.MenuID = menuId.ToLower();
                                 form.Show();
                             }
-
                         }
-
                     }
                 }
                 else
@@ -108,11 +105,8 @@ namespace PSL
             }
         }
 
-
-
         private void CreateAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
