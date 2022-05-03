@@ -52,10 +52,10 @@ namespace DAL
                     if (!spName.Contains(" "))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                    } else
-                        cmd.CommandType = CommandType.Text;
+                    }
+                    else
                     {
-
+                        cmd.CommandType = CommandType.Text;
                     }
                     cmd.CommandText = spName;
                     cmd.Connection = conn;
@@ -85,10 +85,8 @@ namespace DAL
                             return dt;
                         }
                     }
-
                 }
             }
-
         }
 
         public static SqlConnection GetConnection()
