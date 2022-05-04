@@ -37,8 +37,12 @@ namespace PSL.Forms
                 if (FormSetting.LoadDataImmediately)
                 {
                     LoadDataFromDatabase();
-                    dgvDataEditor.Columns["CreatedAt"].ReadOnly = true;
-                    dgvDataEditor.Columns["ModifiedAt"].ReadOnly = true;
+                    if (dgvDataEditor.Columns.Contains("CreateAt")) {
+                        dgvDataEditor.Columns["CreatedAt"].ReadOnly = true;
+                    }
+                    if (dgvDataEditor.Columns.Contains("ModifiedAt")) {
+                        dgvDataEditor.Columns["ModifiedAt"].ReadOnly = true;
+                    }
                 }
             }
             else
