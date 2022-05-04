@@ -19,7 +19,6 @@ namespace PSL.Forms
 
         private void Report_Load(object sender, EventArgs e)
         {
-
             this.rvMain.RefreshReport();
         }
     }
