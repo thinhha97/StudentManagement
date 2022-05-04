@@ -2,14 +2,17 @@
 using DAL;
 using OfficeOpenXml;
 using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Zuby.ADGV;
 
-namespace PSL
+namespace PSL.Forms
 {
     public partial class DataEditor : BaseForm
     {
@@ -46,9 +49,9 @@ namespace PSL
 
         private void LoadDataFromDatabase()
         {
-            dtSource = DataConnection.ReturnDataTable(String.IsNullOrEmpty(this.FormSetting.ProcedureName) 
-                ?this.FormSetting.SelectCommandText 
-                :this.FormSetting.ProcedureName, "@LoginID", UserInfo.LoginID);
+            dtSource = DataConnection.ReturnDataTable(String.IsNullOrEmpty(this.FormSetting.ProcedureName)
+                ? this.FormSetting.SelectCommandText
+                : this.FormSetting.ProcedureName, "@LoginID", UserInfo.LoginID);
             bindingSource.DataSource = dtSource;
             dgvDataEditor.DataSource = bindingSource;
 
@@ -136,7 +139,7 @@ namespace PSL
                     }
                     ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                     using (ExcelPackage package = new ExcelPackage(fileInfo))
-                    {                     
+                    {
                         ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                         int colCount = worksheet.Dimension.End.Column;
                         int rowCount = worksheet.Dimension.End.Row;
@@ -144,7 +147,7 @@ namespace PSL
                         {
                             for (int col = 1; col <= colCount; col++)
                             {
-                                dt.Rows[row-1][col-1] = worksheet.Cells[row, col].Value?.ToString().Trim();
+                                dt.Rows[row - 1][col - 1] = worksheet.Cells[row, col].Value?.ToString().Trim();
                             }
                         }
                     }
@@ -182,7 +185,7 @@ namespace PSL
         {
             if (_unsavedChanges)
             {
-                if (MessageBox.Show(@"Do you want to close this form?\nAll unsaved data will be lost.","Close form?", MessageBoxButtons.YesNo) 
+                if (MessageBox.Show(@"Do you want to close this form?\nAll unsaved data will be lost.", "Close form?", MessageBoxButtons.YesNo)
                     == DialogResult.No)
                 {
                     e.Cancel = true;

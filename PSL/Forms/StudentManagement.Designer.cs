@@ -1,4 +1,4 @@
-﻿namespace PSL
+﻿namespace PSL.Forms
 {
     partial class StudentManagement
     {
@@ -92,7 +92,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }       
+        }
 
         #endregion
 

@@ -1,4 +1,4 @@
-﻿namespace PSL
+﻿namespace PSL.Forms
 {
     partial class BaseForm
     {

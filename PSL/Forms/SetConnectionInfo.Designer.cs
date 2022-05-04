@@ -1,4 +1,4 @@
-﻿namespace PSL
+﻿namespace PSL.Forms
 {
     partial class SetConnectionInfo
     {
@@ -175,4 +175,3 @@
         private System.Windows.Forms.Button btnCancel;
     }
 }
-
