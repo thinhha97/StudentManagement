@@ -161,6 +161,7 @@
     <Compile Include="Forms\StudentManagement.Designer.cs">
       <DependentUpon>StudentManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PasteClipboard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />

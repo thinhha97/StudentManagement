@@ -83,7 +83,7 @@
             this.adgvSearchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
             this.adgvSearchToolBar.Name = "adgvSearchToolBar";
             this.adgvSearchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearchToolBar.Size = new System.Drawing.Size(1582, 27);
+            this.adgvSearchToolBar.Size = new System.Drawing.Size(1478, 27);
             this.adgvSearchToolBar.TabIndex = 4;
             this.adgvSearchToolBar.Text = "advancedDataGridViewSearchToolBar1";
             // 
@@ -110,14 +110,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1582, 833);
+            this.ClientSize = new System.Drawing.Size(1478, 623);
             this.Controls.Add(this.dgvDataEditor);
             this.Controls.Add(this.adgvSearchToolBar);
             this.Controls.Add(this.btnImportExcel);
             this.Controls.Add(this.btnSaveData);
             this.Controls.Add(this.btnReload);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DataEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
@@ -125,6 +125,7 @@
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DataEditor_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataEditor_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataEditor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

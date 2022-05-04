@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DAL;
 using OfficeOpenXml;
+using PSL.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -194,6 +195,14 @@ namespace PSL.Forms
                 {
                     e.Cancel = true;
                 }
+            }
+        }
+
+        private void DataEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                PasteClipboard.ExecutePasteClipboard(dgvDataEditor,dtSource);
             }
         }
     }
