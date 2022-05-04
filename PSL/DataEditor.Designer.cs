@@ -118,6 +118,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DataEditor";
             this.Text = "DataEditor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DataEditor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataEditor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

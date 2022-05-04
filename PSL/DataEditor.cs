@@ -177,5 +177,17 @@ namespace PSL
             _unsavedChanges = true;
             ToggleBtnSaveData();
         }
+
+        private void DataEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_unsavedChanges)
+            {
+                if (MessageBox.Show(@"Do you want to close this form?\nAll unsaved data will be lost.","Close form?", MessageBoxButtons.YesNo) 
+                    == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
