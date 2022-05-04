@@ -29,7 +29,7 @@ namespace PSL.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            // base on menuid to load data using stored procedure
+            // base on menuid to load data using stored procedure or select commandtext.
             this.FormSetting = BLL.FormSetting.Instance(this.MenuID);
             this.Text = this.MenuID;
             if (this.FormSetting != null)
@@ -189,7 +189,7 @@ namespace PSL.Forms
         {
             if (_unsavedChanges)
             {
-                if (MessageBox.Show(@"Do you want to close this form?\nAll unsaved data will be lost.", "Close form?", MessageBoxButtons.YesNo)
+                if (MessageBox.Show(@"Do you want to close this form?\r\nAll unsaved data will be lost.", "Close form?", MessageBoxButtons.YesNo)
                     == DialogResult.No)
                 {
                     e.Cancel = true;

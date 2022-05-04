@@ -87,6 +87,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StudentManagement";
             this.Text = "StudentManagement";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.msMain.ResumeLayout(false);
             this.msMain.PerformLayout();
             this.ResumeLayout(false);

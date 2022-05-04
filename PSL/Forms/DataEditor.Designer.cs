@@ -75,6 +75,7 @@
             // adgvSearchToolBar
             // 
             this.adgvSearchToolBar.AllowMerge = false;
+            this.adgvSearchToolBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adgvSearchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.adgvSearchToolBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.adgvSearchToolBar.Location = new System.Drawing.Point(0, 0);
@@ -82,7 +83,7 @@
             this.adgvSearchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
             this.adgvSearchToolBar.Name = "adgvSearchToolBar";
             this.adgvSearchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.adgvSearchToolBar.Size = new System.Drawing.Size(1082, 27);
+            this.adgvSearchToolBar.Size = new System.Drawing.Size(1582, 27);
             this.adgvSearchToolBar.TabIndex = 4;
             this.adgvSearchToolBar.Text = "advancedDataGridViewSearchToolBar1";
             // 
@@ -94,12 +95,12 @@
             this.dgvDataEditor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataEditor.FilterAndSortEnabled = true;
             this.dgvDataEditor.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.dgvDataEditor.Location = new System.Drawing.Point(12, 66);
+            this.dgvDataEditor.Location = new System.Drawing.Point(15, 70);
             this.dgvDataEditor.Name = "dgvDataEditor";
             this.dgvDataEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDataEditor.RowHeadersWidth = 51;
             this.dgvDataEditor.RowTemplate.Height = 24;
-            this.dgvDataEditor.Size = new System.Drawing.Size(1058, 538);
+            this.dgvDataEditor.Size = new System.Drawing.Size(1460, 550);
             this.dgvDataEditor.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.dgvDataEditor.TabIndex = 5;
             this.dgvDataEditor.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDataEditor_CellValueChanged);
@@ -108,7 +109,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 616);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1582, 833);
             this.Controls.Add(this.dgvDataEditor);
             this.Controls.Add(this.adgvSearchToolBar);
             this.Controls.Add(this.btnImportExcel);
@@ -117,7 +120,10 @@
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DataEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "DataEditor";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DataEditor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataEditor)).EndInit();
             this.ResumeLayout(false);

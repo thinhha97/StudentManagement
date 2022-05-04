@@ -26,8 +26,8 @@ namespace PSL.Forms
             // 1. Load Menu list
             using (DataTable dt = DataConnection.ReturnDataTable("spLoadMenu", "@LoginID", UserInfo.LoginID))
             {
-                DataRow[] parents = dt.Select("ParentMenuID is null");
-                DataRow[] children = dt.Select("ParentMenuID = 'MNStudentManagement'");
+                //DataRow[] parents = dt.Select("ParentMenuID is null");
+                //DataRow[] children = dt.Select("ParentMenuID = 'MNStudentManagement'");
                 BuildMenuItems(dt, null, null);
             }
             // 2. Build Menu from top
@@ -86,6 +86,7 @@ namespace PSL.Forms
                             if (_obj is BaseForm form)
                             {
                                 form.MdiParent = this;
+                                form.WindowState = FormWindowState.Maximized;
                                 form.MenuID = menuId.ToLower();
                                 form.Show();
                             }
