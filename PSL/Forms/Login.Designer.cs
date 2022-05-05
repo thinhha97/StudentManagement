@@ -40,7 +40,7 @@
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(301, 69);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(7);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(372, 45);
             this.txtUsername.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(69, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 39);
+            this.label1.Size = new System.Drawing.Size(168, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
@@ -61,14 +61,14 @@
             this.label2.Location = new System.Drawing.Point(69, 173);
             this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 39);
+            this.label2.Size = new System.Drawing.Size(162, 38);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(301, 166);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(7);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(372, 45);
             this.txtPassword.TabIndex = 2;
@@ -76,8 +76,9 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Location = new System.Drawing.Point(76, 330);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(7);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(330, 55);
             this.btnLogin.TabIndex = 5;
@@ -87,9 +88,10 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(461, 330);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(218, 55);
             this.btnCancel.TabIndex = 6;
@@ -100,10 +102,11 @@
             // chbRememberPassword
             // 
             this.chbRememberPassword.AutoSize = true;
+            this.chbRememberPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbRememberPassword.Location = new System.Drawing.Point(304, 257);
-            this.chbRememberPassword.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.chbRememberPassword.Margin = new System.Windows.Forms.Padding(7);
             this.chbRememberPassword.Name = "chbRememberPassword";
-            this.chbRememberPassword.Size = new System.Drawing.Size(362, 43);
+            this.chbRememberPassword.Size = new System.Drawing.Size(350, 42);
             this.chbRememberPassword.TabIndex = 4;
             this.chbRememberPassword.Text = "Remember password";
             this.chbRememberPassword.UseVisualStyleBackColor = true;
@@ -123,7 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsername);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
